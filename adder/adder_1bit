@@ -4,78 +4,81 @@
 :vpi_module "system";
 :vpi_module "v2005_math";
 :vpi_module "va_math";
-S_0x1321be0 .scope module, "test" "test" 2 17;
+S_0x1d90220 .scope module, "test" "test" 2 20;
  .timescale 0 0;
-v0x1334c90_0 .var "A", 0 0;
-v0x1334d30_0 .var "B", 0 0;
-v0x1334de0_0 .net "C", 0 0, L_0x13351b0; 1 drivers
-v0x1334e90_0 .var "Cin", 0 0;
-v0x1334f70_0 .net "S", 0 0, L_0x13357f0; 1 drivers
-S_0x1321cd0 .scope module, "gate" "Adder" 2 18, 2 1, S_0x1321be0;
+v0x1da3490_0 .var "A", 0 0;
+v0x1da3530_0 .var "B", 0 0;
+v0x1da35e0_0 .net "C", 0 0, L_0x1da39b0; 1 drivers
+v0x1da3690_0 .var "Cin", 0 0;
+v0x1da3770_0 .net "S", 0 0, L_0x1da4110; 1 drivers
+S_0x1d90310 .scope module, "gate" "Adder" 2 21, 2 1, S_0x1d90220;
  .timescale 0 0;
-L_0x1334800 .functor AND 1, v0x1334c90_0, v0x1334d30_0, C4<1>, C4<1>;
-L_0x13350a0 .functor AND 1, v0x1334d30_0, v0x1334e90_0, C4<1>, C4<1>;
-L_0x1335150 .functor AND 1, v0x1334c90_0, v0x1334e90_0, C4<1>, C4<1>;
-L_0x13351b0 .functor OR 1, L_0x1334800, L_0x13350a0, L_0x1335150, C4<0>;
-L_0x1335350 .functor AND 1, C4<z>, C4<z>, v0x1334e90_0, C4<1>;
-L_0x1335470 .functor AND 1, C4<z>, v0x1334d30_0, C4<z>, C4<1>;
-L_0x13355c0 .functor AND 1, v0x1334c90_0, v0x1334d30_0, L_0x13351b0, C4<1>;
-L_0x13356e0 .functor AND 1, v0x1334c90_0, C4<z>, C4<z>, C4<1>;
-L_0x13357f0 .functor OR 1, L_0x1335350, L_0x1335470, L_0x13355c0, L_0x13356e0;
-v0x12fcac0_0 .net "A", 0 0, v0x1334c90_0; 1 drivers
-v0x13341e0_0 .net "AB", 0 0, L_0x1334800; 1 drivers
-v0x1334280_0 .net "ABC", 0 0, L_0x13355c0; 1 drivers
-v0x1334320_0 .net "AB_barC_bar", 0 0, L_0x13356e0; 1 drivers
-v0x13343d0_0 .net "ACin", 0 0, L_0x1335150; 1 drivers
-v0x1334470_0 .net "A_bar", 0 0, C4<z>; 0 drivers
-v0x1334550_0 .net "A_bar_BC_bar", 0 0, L_0x1335470; 1 drivers
-v0x13345f0_0 .net "A_bar_B_barC", 0 0, L_0x1335350; 1 drivers
-v0x13346e0_0 .net "B", 0 0, v0x1334d30_0; 1 drivers
-v0x1334780_0 .net "BCin", 0 0, L_0x13350a0; 1 drivers
-v0x1334880_0 .net "B_bar", 0 0, C4<z>; 0 drivers
-v0x1334920_0 .alias "C", 0 0, v0x1334de0_0;
-v0x1334a30_0 .net "C_bar", 0 0, C4<z>; 0 drivers
-v0x1334ad0_0 .net "Cin", 0 0, v0x1334e90_0; 1 drivers
-v0x1334bf0_0 .alias "S", 0 0, v0x1334f70_0;
-    .scope S_0x1321be0;
+L_0x1da3000 .functor AND 1, v0x1da3490_0, v0x1da3530_0, C4<1>, C4<1>;
+L_0x1da38a0 .functor AND 1, v0x1da3530_0, v0x1da3690_0, C4<1>, C4<1>;
+L_0x1da3950 .functor AND 1, v0x1da3490_0, v0x1da3690_0, C4<1>, C4<1>;
+L_0x1da39b0 .functor OR 1, L_0x1da3000, L_0x1da38a0, L_0x1da3950, C4<0>;
+L_0x1da3b50 .functor NOT 1, v0x1da3490_0, C4<0>, C4<0>, C4<0>;
+L_0x1da3c40 .functor NOT 1, v0x1da3530_0, C4<0>, C4<0>, C4<0>;
+L_0x1da3d30 .functor NOT 1, v0x1da3690_0, C4<0>, C4<0>, C4<0>;
+L_0x1da3e20 .functor AND 1, L_0x1da3b50, L_0x1da3c40, v0x1da3690_0, C4<1>;
+L_0x1da3eb0 .functor AND 1, L_0x1da3b50, v0x1da3530_0, L_0x1da3d30, C4<1>;
+L_0x1da3f60 .functor AND 1, v0x1da3490_0, v0x1da3530_0, v0x1da3690_0, C4<1>;
+L_0x1da4050 .functor AND 1, v0x1da3490_0, L_0x1da3c40, L_0x1da3d30, C4<1>;
+L_0x1da4110 .functor OR 1, L_0x1da3e20, L_0x1da3eb0, L_0x1da3f60, L_0x1da4050;
+v0x1d7da20_0 .net "A", 0 0, v0x1da3490_0; 1 drivers
+v0x1da29e0_0 .net "AB", 0 0, L_0x1da3000; 1 drivers
+v0x1da2a80_0 .net "ABCin", 0 0, L_0x1da3f60; 1 drivers
+v0x1da2b20_0 .net "AB_barCin_bar", 0 0, L_0x1da4050; 1 drivers
+v0x1da2bd0_0 .net "ACin", 0 0, L_0x1da3950; 1 drivers
+v0x1da2c70_0 .net "A_bar", 0 0, L_0x1da3b50; 1 drivers
+v0x1da2d50_0 .net "A_bar_BCin_bar", 0 0, L_0x1da3eb0; 1 drivers
+v0x1da2df0_0 .net "A_bar_B_barCin", 0 0, L_0x1da3e20; 1 drivers
+v0x1da2ee0_0 .net "B", 0 0, v0x1da3530_0; 1 drivers
+v0x1da2f80_0 .net "BCin", 0 0, L_0x1da38a0; 1 drivers
+v0x1da3080_0 .net "B_bar", 0 0, L_0x1da3c40; 1 drivers
+v0x1da3120_0 .alias "C", 0 0, v0x1da35e0_0;
+v0x1da3230_0 .net "Cin", 0 0, v0x1da3690_0; 1 drivers
+v0x1da32d0_0 .net "Cin_bar", 0 0, L_0x1da3d30; 1 drivers
+v0x1da33f0_0 .alias "S", 0 0, v0x1da3770_0;
+    .scope S_0x1d90220;
 T_0 ;
-    %set/v v0x1334c90_0, 0, 1;
-    %set/v v0x1334d30_0, 0, 1;
-    %set/v v0x1334e90_0, 0, 1;
+    %set/v v0x1da3490_0, 0, 1;
+    %set/v v0x1da3530_0, 0, 1;
+    %set/v v0x1da3690_0, 0, 1;
     %end;
     .thread T_0;
-    .scope S_0x1321be0;
+    .scope S_0x1d90220;
 T_1 ;
     %delay 50, 0;
-    %load/v 8, v0x1334c90_0, 1;
+    %load/v 8, v0x1da3690_0, 1;
     %mov 9, 0, 31;
     %addi 8, 1, 32;
-    %set/v v0x1334c90_0, 8, 1;
-    %vpi_call 2 28 "$monitor", "%4dns,%d,%d,%d,%d,%d", $stime, v0x1334c90_0, v0x1334d30_0, v0x1334e90_0, v0x1334de0_0, v0x1334f70_0;
+    %set/v v0x1da3690_0, 8, 1;
+    %vpi_call 2 31 "$monitor", "%4dns,%d,%d,%d,%d,%d", $stime, v0x1da3490_0, v0x1da3530_0, v0x1da3690_0, v0x1da35e0_0, v0x1da3770_0;
     %jmp T_1;
     .thread T_1;
-    .scope S_0x1321be0;
+    .scope S_0x1d90220;
 T_2 ;
     %delay 100, 0;
-    %load/v 8, v0x1334d30_0, 1;
+    %load/v 8, v0x1da3530_0, 1;
     %mov 9, 0, 31;
     %addi 8, 1, 32;
-    %set/v v0x1334d30_0, 8, 1;
+    %set/v v0x1da3530_0, 8, 1;
     %jmp T_2;
     .thread T_2;
-    .scope S_0x1321be0;
+    .scope S_0x1d90220;
 T_3 ;
     %delay 200, 0;
-    %load/v 8, v0x1334e90_0, 1;
+    %load/v 8, v0x1da3490_0, 1;
     %mov 9, 0, 31;
     %addi 8, 1, 32;
-    %set/v v0x1334e90_0, 8, 1;
+    %set/v v0x1da3490_0, 8, 1;
     %jmp T_3;
     .thread T_3;
-    .scope S_0x1321be0;
+    .scope S_0x1d90220;
 T_4 ;
     %delay 2000, 0;
-    %vpi_call 2 36 "$finish";
+    %vpi_call 2 39 "$finish";
     %end;
     .thread T_4;
 # The file index is used to find the file name in the following table.
