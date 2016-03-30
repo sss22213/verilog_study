@@ -41,10 +41,10 @@ addern ADD1(carryin,X,Y,S,sub,carryout);
 initial 
 begin
 	X=8'b00000000;
-	Y=8'b00000000;
+	Y=8'b00000000;;
 	major1=8'b00000000;
 	major2=8'b00000000;
-	sub=8'b00000000;
+	sub=8'b11111111;
 	carryin=0;
 end
 always
